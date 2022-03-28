@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["import","unused-imports","@typescript-eslint"],
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    "import/order": [2, { "alphabetize": { "order": "asc" } }]
+  }
+}

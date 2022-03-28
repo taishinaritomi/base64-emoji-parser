@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+  base64-emoji-parser:
+    container_name: base64-emoji-parser
+    restart: always
+    volumes:
+      - /dist
+      - /workspace/node_modules
+      - ./:/workspace
+    build:
+      context: .
+      dockerfile: ./Dockerfile
