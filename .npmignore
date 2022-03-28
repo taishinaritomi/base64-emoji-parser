@@ -1,0 +1,12 @@
+node_modules/
+src/
+tsconfig.tsbuildinfo
+package-lock.json
+test.ts
+Dockerfile
+docker-compose.yml
+.env
+.prettierrc.json
+.eslintrc.json
+.gitignore
+tsconfig.json
