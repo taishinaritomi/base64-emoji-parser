@@ -1,6 +1,6 @@
 {
   "name": "base64-emoji-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Base64 Emoji Parser",
   "main": "dist/index.js",
   "author": "Taishi Naritomi",
