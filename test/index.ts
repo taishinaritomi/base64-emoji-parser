@@ -13,17 +13,17 @@ function emojiParserCheck(str = alphabet) {
   }
 }
 
-function duplicateCheck(len = Object.values(emojiPattern)) {
-  var set = new Set(len);
-  if(set.size === len.length) {
+function duplicateCheck(arr = Object.values(emojiPattern)) {
+  var set = new Set(arr);
+  if(set.size === arr.length) {
     return 'success duplicateCheck';
   } else {
     throw new Error("duplicateCheck");
   }
 }
 
-function allAlphabet(len = Object.keys(emojiPattern)) {
-  if(len.join("") === alphabet) {
+function allAlphabet(arr = Object.keys(emojiPattern)) {
+  if(arr.join("") === alphabet) {
     return 'success allAlphabets';
   } else {
     throw new Error("allAlphabets");
