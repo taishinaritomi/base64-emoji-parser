@@ -1,4 +1,4 @@
-import { base64ToEmoji, emojiToBase64 } from './index';
+import { base64ToEmoji, emojiToBase64 } from '../src/index';
 
 const alphabet =
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/+=-_';

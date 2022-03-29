@@ -15,7 +15,7 @@
     "url": "git+https://github.com/taishinaritomi/base64-emoji-parser.git"
   },
   "scripts": {
-    "test": "ts-node src/test.ts",
+    "test": "ts-node test/index.ts",
     "tsc": "tsc",
     "ts-node": "ts-node",
     "lint:fix": "eslint --ext .ts,.tsx --fix 'src/**/*.ts'",
