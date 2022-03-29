@@ -1,8 +1,8 @@
 node_modules/
 src/
+test/
 tsconfig.tsbuildinfo
 package-lock.json
-test.ts
 Dockerfile
 docker-compose.yml
 .env
