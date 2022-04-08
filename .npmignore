@@ -10,3 +10,4 @@ docker-compose.yml
 .eslintrc.json
 .gitignore
 tsconfig.json
+.DS_Store
