@@ -1,31 +1,31 @@
-name: Publish To npm
+name: Release
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 jobs:
-  publish-to-npm:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-          scope: 'base64-emoji-parser'
           always-auth: true
-      - name: can publish
-        run: npx can-npm-publish --verbose
+          cache: 'yarn'
       - name: install
-        run: npm install
+        run: yarn install
       - name: build
-        run: yarn build --if-present
+        run: yarn build
+      - name: code check
+        run: yarn code:check
       - name: test
         run: yarn test
-      - name: publish
-        run: npm publish --access=public
+      - name: release
+        run: yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

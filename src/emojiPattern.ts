@@ -68,4 +68,4 @@ export const emojiPattern = {
   '+': '🤫',
   '=': '🤥',
   '-': '😶',
-};
+} as const;

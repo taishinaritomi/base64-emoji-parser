@@ -1,10 +1,9 @@
 {
   "name": "base64-emoji-parser",
   "version": "0.1.4",
-  "description": "Base64 Emoji Parser",
-  "main": "dist/index.js",
-  "author": "Taishi Naritomi",
   "license": "MIT",
+  "author": "Taishi Naritomi",
+  "description": "Base64 Emoji Parser",
   "keywords": [
     "base64",
     "emoji",
@@ -14,23 +13,54 @@
     "type": "git",
     "url": "git+https://github.com/taishinaritomi/base64-emoji-parser.git"
   },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "ts-node test/index.ts",
-    "build": "tsc",
-    "ts-node": "ts-node",
-    "lint:fix": "eslint --ext .ts,.tsx --fix 'src/**/*.ts'",
-    "format": "prettier --write './src/**/*.{ts,json}'"
+    "test": "vitest run",
+    "build": "rimraf ./dist && run-p build:*",
+    "build:type": "tsc --declaration --emitDeclarationOnly --outDir dist/types -p tsconfig.build.json",
+    "build:esm": "esbuild --format=esm --bundle src/index.ts --outfile=dist/esm/index.js --minify",
+    "build:cjs": "esbuild --format=cjs --bundle src/index.ts --outfile=dist/cjs/index.js --minify",
+    "code:fix": "run-s code:fix:*",
+    "code:fix:lint": "eslint . --fix --ignore-path .gitignore",
+    "code:fix:format": "prettier . --write --ignore-path .gitignore",
+    "code:check": "run-p code:check:*",
+    "code:check:type": "tsc --noEmit",
+    "code:check:lint": "eslint . --ignore-path .gitignore",
+    "code:check:format": "prettier . --check --ignore-path .gitignore",
+    "code:check:exports": "publint",
+    "release": "changeset publish"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
+    "@changesets/cli": "^2.26.0",
+    "@tsconfig/strictest": "^1.0.2",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "esbuild": "^0.16.17",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "prettier": "^2.6.1",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.2",
+    "publint": "^0.1.8",
+    "rimraf": "^4.0.4",
+    "typescript": "^4.9.4",
+    "vitest": "^0.27.1"
   }
 }

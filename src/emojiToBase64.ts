@@ -1,6 +1,7 @@
-import { EmojiPattern, emojiPattern } from './emojiPattern';
+import type { EmojiPattern } from './emojiPattern';
+import { emojiPattern } from './emojiPattern';
 
-const emojiToBase64 = (
+export const emojiToBase64 = (
   str: string,
   pattern: EmojiPattern = emojiPattern,
 ) => {
@@ -10,4 +11,3 @@ const emojiToBase64 = (
   }
   return str;
 };
-export default emojiToBase64;
