@@ -69,6 +69,10 @@ console.log(base64Parsed);
 //TWVzc2FnZSAhIQ==
 ```
 
-## License
+# Author
 
-MIT
+[Taishi Naritomi](https://github.com/taishinaritomi)
+
+# License
+
+[MIT](https://github.com/taishinaritomi/base64-emoji-parser/blob/main/LICENSE)
