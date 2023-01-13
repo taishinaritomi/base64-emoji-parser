@@ -1,7 +1,7 @@
 <div>
   <div align="center">
     <br />
-    <h2>Base64 Emoji Parser</h2>
+    <h1>Base64 Emoji Parser</h1>
     <br />
     <hr />
   </div>
