@@ -3,7 +3,6 @@
     <br />
     <h1>Base64 Emoji Parser</h1>
     <br />
-    <hr />
   </div>
   <br />
   <div align="center">
