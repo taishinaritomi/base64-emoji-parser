@@ -4,7 +4,6 @@
     <h1>Base64 Emoji Parser</h1>
     <br />
   </div>
-  <br />
   <div align="center">
     <a href='https://www.npmjs.com/package/base64-emoji-parser'>
       <img src='https://img.shields.io/npm/v/base64-emoji-parser?style=for-the-badge'>
