@@ -1,6 +1,6 @@
 {
   "name": "base64-emoji-parser",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "author": "Taishi Naritomi",
   "description": "Base64 Emoji Parser",
